@@ -4,29 +4,14 @@
  *
  * @package Professional
  */
-?>
-	<div id="secondary" class="widget-area col-md-4" role="complementary">
-		<?php if ( ! dynamic_sidebar( 'sidebar-primary' ) ) : ?>
 
-			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'professional' ); ?></h1>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	return;
+}
 
-			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'professional' ); ?></h1>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-			
-			<aside id="search" class="widget widget_search">
-				<?php get_search_form(); ?>
-			</aside>
+if ( professional_load_sidebar() ) : ?>
+<div id="secondary" class="widget-area <?php do_action('professional_secondary-width') ?>" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</div><!-- #secondary -->
+<?php endif; ?>
 
-		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->

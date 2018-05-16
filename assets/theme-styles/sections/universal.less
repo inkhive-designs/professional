@@ -1,0 +1,79 @@
+.site-title-font {
+  font-family: 'Michroma', Arial, sans-serif;
+}
+
+.body-font {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  margin: auto;
+}
+a:hover {
+  text-decoration: none;
+}
+body {
+  overflow-x: hidden;
+  .body-font;
+  color: @accent;
+}
+#content {
+  background: @default-background;
+  clear: both;
+}
+a {
+  color: @accent;
+  transition: 0.4s all ease;
+  &:visited {
+    color: @accent-hover;
+  }
+  &:hover {
+    color: @accent-hover;
+  }
+}
+
+#content {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.page-header {
+  margin-top: -20px;
+}
+#home-title {
+  margin-top: -3px;
+  .site-title-font;
+  font-size: 22px;
+  margin-bottom: 30px;
+  margin-left: -15px;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: dotted 2px @accent;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+    border-bottom: none;
+    width: 100%;
+  }
+}
+
+
+/*--------------- responsive cheats ----------- */
+
+@media screen and (max-width: 991px) {
+  #social-icons {
+    float: none;
+    text-align: center;
+    padding-bottom: 20px;
+    overflow: auto;
+    img {
+      float: none !important
+    }
+  }
+  .featured-thumb {
+    margin-bottom: 15px;
+  }
+  #secondary, #secondary-2 {
+    margin-top: 25px;
+  }
+}

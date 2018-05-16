@@ -28,8 +28,20 @@ jQuery(document).ready( function () {
 	
 	//For Tooltips
 	jQuery('#social-icons a').tooltipster();
-	
-	});//end ready
+
+    jQuery('.bxslider').bxSlider( {
+        mode: 'fade',
+        speed: 1000,
+        captions: true,
+        minSlides: 1,
+        maxSlides: 1,
+        adaptiveHeight: true,
+        auto: true,
+        preloadImages: 'all',
+        pause: 5000,
+        autoHover: true } );
+
+});//end ready
 	
 	//Waypoint Animation
 	jQuery(function($) {

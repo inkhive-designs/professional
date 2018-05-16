@@ -1,0 +1,41 @@
+/* --------------- colophon ---------------- */
+#colophon {
+  text-align: center;
+  border-top: solid 1px #eee;
+  padding: 15px;
+  background: @accent;
+  padding-bottom: 4px;
+  color: #eee;
+  .site-info {
+    text-align: left;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: #ddd;
+    }
+  }
+  .footer-menu {
+    text-align: right;
+    ul ul {
+      display: none;
+    }
+    ul {
+      li {
+        display: inline;
+        padding-right: 10px;
+      }
+    }
+  }
+  @media screen {
+    @media (max-width: 991px) {
+      .site-info {
+        text-align: center;
+        margin: 20px;
+      }
+      .footer-menu {
+        text-align: center;
+      }
+    }
+  }
+}

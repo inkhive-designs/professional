@@ -1,0 +1,48 @@
+
+#secondary {
+  margin-top: -20px;
+  h1.widget-title {
+    font-size: 15px;
+    border-bottom: solid 2px @accent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    text-transform: uppercase;
+    background: url(../../images/pattern2.png);
+    .site-title-font;
+    font-weight: normal;
+  }
+  a {
+    color: @accent;
+    &:hover {
+      color: darken(@content,10%);
+    }
+  }
+  ul {
+    margin-left: 20px;
+    ul {
+      margin-left: 5px;
+    }
+  }
+  font-size: 13px;
+}
+
+article {
+  table {
+    border: solid 1px #eee;
+    tr:nth-child(even) {
+      background: lighten(grey,50%);
+    }
+    th {
+      background: black;
+      color: white;
+      padding: 5px 10px;
+    }
+    td {
+      padding: 5px 10px;
+    }
+  }
+  h1,h2,h3 {
+    .site-title-font;
+  }
+}

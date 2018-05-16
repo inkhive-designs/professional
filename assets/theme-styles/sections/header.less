@@ -1,0 +1,36 @@
+#masthead {
+  text-align: left;
+  padding: 0px;
+  border: none;
+  position: relative;
+  .site-title {
+    .site-title-font;
+    position: relative;
+    .transition(0.7s all ease);
+    a {
+      color: @accent;
+      font-size: 32px;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform-style: flat;
+      display: inline-block;
+      &:hover {
+        transform: scale(1.02) rotate(-1deg);
+        -webkit-transform: scale(1.02) rotate(-1deg);
+      }
+    }
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .site-description {
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: lighter;
+    color: @content;
+  }
+  @media screen {
+    @media (max-width: 991px) {
+      text-align: center;
+    }
+  }
+}

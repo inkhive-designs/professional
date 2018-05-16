@@ -1,0 +1,94 @@
+/*------------------ Navigation -------------- */
+#top-nav {
+  clear:both;
+  display: block;
+  border-top: solid 2px @accent;
+  margin-top: 35px;
+  #site-navigation {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 13px;
+    padding-left: 0px;
+    -webkit-backface-visibility: hidden;
+    a {
+      color: @content;
+      text-transform: uppercase;
+      padding: 13px 15px;
+      .body-font;
+      &:hover {
+        color: @accent;
+        background: darken(@default-background,5%);
+      }
+    }
+    ul {
+      margin-left: 0px;
+      z-index: 99999;
+      li{
+        float: left;
+        display: inline-block;
+        &:hover > a {
+          background: darken(@default-background, 5%);
+        }
+      }
+      ul {
+        background: darken(@default-background,5%);
+        box-shadow: none;
+        top:3.4em;
+        a {
+          padding: 5px;
+          font-size: 12px;
+          text-align: left;
+          padding-left: 10px;
+          color: darken(@content, 10%);
+          &:hover {
+            background: darken(@default-background, 8%);
+          }
+        }
+        ul {
+          top: 0em;
+        }
+      }
+    }
+    div.menu > ul > li > a, ul.menu > li > a {
+      &:before {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        top: 80%;
+        left: 0;
+        width: 100%;
+        border-left: solid 2px @accent;
+        height: 2px;
+        opacity: 0;
+        background: @accent;
+        content: '';
+        .transition(0.3s all ease);
+      }
+      &:hover {
+        background: none;
+        &:before {
+          top: 100%;
+          opacity: 1;
+          height: 2px;
+        }
+      }
+    }
+  }
+  @media screen {
+    @media (max-width: 600px) {
+      h1.menu-toggle {
+        .site-title-font;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+      #site-navigation {
+        ul ul { display: none !important; }
+        ul { margin-left: 15%;}
+        ul li {
+          display: block;
+          width: 80%;
+        }
+      }
+    }
+  }
+}

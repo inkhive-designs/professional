@@ -13,40 +13,33 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-md-8">
+	<div id="primary" class="content-area <?php do_action('professional_primary-width') ?>">
+        <div id="home-title">
+            <?php _e('Recent Posts', 'professional'); ?>
+        </div>
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+            <?php if ( have_posts() ) : ?>
 
-			<?php $count = 0; ?>
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+                <?php /* Start the Loop */ ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					if($count == 0)
-						echo "<div class='row'>" ;
-					elseif($count%2 == 0)
-						echo "</div><!--.row--><div class='row'>";
-					 
-					get_template_part( 'content', 'grid2' );
-					
-					$count++;
-				?>
+                    <?php
+                    /* Include the Post-Format-specific template for the content.
+                     */
+                    do_action('professional_blog_layout');
 
-			<?php endwhile; ?>
-			<?php echo "</div><!--.row-->"; ?>
+                    ?>
 
-			<?php professional_pagination(); ?>
+                <?php endwhile; ?>
 
-		<?php else : ?>
+                <?php professional_pagination(); ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+            <?php else : ?>
+            
+			    <?php get_template_part( 'modules/content/content', 'none' ); ?>
 
-		<?php endif; ?>
+		    <?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

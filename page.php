@@ -12,12 +12,12 @@
 
 get_header(); ?>
 
-	<div id="primary-mono" class="content-area col-md-8">
+    <div id="primary-mono" class="content-area <?php do_action('professional_primary-width') ?> page">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'modules/content/content', 'page' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
