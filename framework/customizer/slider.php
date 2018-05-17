@@ -20,7 +20,10 @@ function professional_customize_register_slider($wp_customize){
 
     $wp_customize->add_setting(
         'professional_main_slider_enable',
-        array( 'sanitize_callback' => 'professional_sanitize_checkbox' )
+        array(
+            'default'  => false,
+            'sanitize_callback' => 'professional_sanitize_checkbox'
+        )
     );
 
     $wp_customize->add_control(
@@ -29,6 +32,7 @@ function professional_customize_register_slider($wp_customize){
             'label'    => __( 'Enable Slider.', 'professional' ),
             'section'  => 'professional_sec_slider_options',
             'type'     => 'checkbox',
+            'default'  => false
         )
     );
 
@@ -48,11 +52,16 @@ function professional_customize_register_slider($wp_customize){
             'section'  => 'professional_sec_slider_options',
             'type'     => 'number',
             'description' => __('Save the Settings, and Reload this page to Configure the Slides.','professional'),
-
         )
     );
 
+    /* Active Callback Function */
+    function professional_show_slide_options($control) {
 
+        $option = $control->manager->get_setting('professional_main_slider_enable');
+        return $option->value() == false ;
+
+    }
 
     if ( get_theme_mod('professional_main_slider_count') > 0 ) :
         $slides = get_theme_mod('professional_main_slider_count');
@@ -84,7 +93,9 @@ function professional_customize_register_slider($wp_customize){
                 array(
                     'title'     => 'Slide '.$i,
                     'priority'  => $i,
-                    'panel'     => 'professional_slider_panel'
+                    'panel'     => 'professional_slider_panel',
+                    'active_callback' => 'professional_show_slide_options'.$i,
+                    'default'  => false
                 )
             );
 
