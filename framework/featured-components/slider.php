@@ -17,15 +17,13 @@ if ( get_theme_mod('professional_main_slider_enable' ) && is_front_page() ) :
                         <li>
                             <a href="<?php echo $url; ?>">
                                 <img src="<?php echo $img; ?>">
-                                <div class='slider-caption'>
-                                    <?php if($title): ?>
-                                        <div class='slider-caption-title'><?php echo $title; ?></div>
-                                    <?php endif; ?>
-                                    <?php if($title): ?>
-                                        <div class='slider-caption-desc'><?php echo $desc; ?></div>
-                                    <?php endif; ?>
-                                </div>
 
+                                <?php if($title || $desc): ?>
+                                <div class='slider-caption'>
+                                    <div class='slider-caption-title'><?php echo $title; ?></div>
+                                    <div class='slider-caption-desc'><?php echo $desc; ?></div>
+                                </div>
+                                <?php endif; ?>
 							</a>
                         </li>
             <?php endfor; ?>

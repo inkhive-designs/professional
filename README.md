@@ -76,8 +76,9 @@ Source: http://creativecommons.org/publicdomain/zero/1.0/
 * Skins Added
 * Blog Layouts Added
 * Support for Footer Credit Line Added
+* Social Icons Added
+* Font Awesome Updated
 * Minor Bug Fixes
-
 
 ### Version 1.2.0.1
 

@@ -19,11 +19,13 @@ function professional_customize_register_layouts($wp_customize) {
 
     $wp_customize->add_setting(
         'professional_blog_layout',
-        array( 'sanitize_callback' => 'professional_sanitize_blog_layout' )
+        array(
+            'default' => 'grid',
+            'sanitize_callback' => 'professional_sanitize_blog_layout' )
     );
 
     function professional_sanitize_blog_layout( $input ) {
-        if ( in_array($input, array('grid','grid_2_column','professional') ) )
+        if ( in_array($input, array('grid','grid_2_column','grid_3_column','professional') ) )
             return $input;
         else
             return '';
@@ -39,6 +41,7 @@ function professional_customize_register_layouts($wp_customize) {
             'choices' => array(
                 'grid' => __('Standard Blog Layout','professional'),
                 'grid_2_column' => __('Grid 2 Column Layout','professional'),
+                'grid_3_column' => __('Grid 3 Column Layout','professional'),
                 'professional' => __('Professional Layout','professional'),
             )
         )
