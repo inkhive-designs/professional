@@ -8,10 +8,10 @@ function professional_scripts() {
     wp_enqueue_style( 'professional-style', get_stylesheet_uri() );
     
     //Load Google Fonts For Title
-    wp_enqueue_style('professional-title-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('professional_title_font', 'Michroma')) ).':100,300,400,700' );
+    wp_enqueue_style('professional-title-font', 'https://fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('professional_title_font', 'Michroma')) ).':100,300,400,700' );
 
     //Load Google Fonts For Body
-    wp_enqueue_style('professional-body-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('professional_body_font', 'Noto Sans') ) ).':100,300,400,700' );
+    wp_enqueue_style('professional-body-font', 'https://fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('professional_body_font', 'Noto Sans') ) ).':100,300,400,700' );
 
     //Load Bootstrap CSS
     wp_enqueue_style('bootstrap-style',get_template_directory_uri()."/assets/frameworks/bootstrap/css/bootstrap.min.css");

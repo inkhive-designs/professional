@@ -41,7 +41,7 @@ function professional_customize_register_skins($wp_customize) {
             'settings' => 'professional_skin',
             'section'  => 'colors',
             'label' => __('Choose Skin','professional'),
-            'description' => __('Free Version of professional Supports 3 Different Skin Colors.','professional'),
+            'description' => __('Free Version of professional Supports 5 Different Skin Colors.','professional'),
             'type' => 'select',
             'choices' => $skins,
         )

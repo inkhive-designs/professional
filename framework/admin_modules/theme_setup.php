@@ -45,7 +45,10 @@ if ( ! function_exists( 'professional_setup' ) ) :
             'primary' => __( 'Primary Menu', 'professional' ),
             'footer' => __( 'Footer Menu', 'professional' ),
         ) );
-
+        
+        // Enable Title Tag
+        add_theme_support( 'title-tag' );
+        
         // Enable support for Post Formats.
         add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
@@ -65,7 +68,7 @@ if ( ! function_exists( 'professional_setup' ) ) :
 
         //Register custom thumbnail sizes
         add_image_size('grid',350,350,true); //For the Grid layout
-        add_image_size('grid2',430,292,true); //For the Grid2 layout
+        add_image_size('grid2',600,407,true); //For the Grid2 layout
 
     }
 endif; // professional_setup

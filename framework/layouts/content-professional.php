@@ -10,7 +10,7 @@
         <?php if (has_post_thumbnail()) : ?>
             <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_post_thumbnail('grid2'); ?></a>
         <?php else: ?>
-            <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>"></a>
+            <a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder3.jpg"; ?>"></a>
         <?php endif; ?>
 
         <div class="out-thumb">

@@ -43,7 +43,7 @@ if ( class_exists('WP_Customize_Control') && class_exists('woocommerce') ) {
                 array(
                     'name'              => '_customize-dropdown-categories-' . $this->id,
                     'echo'              => 0,
-                    'show_option_none'  => __( '&mdash; Select &mdash;', 'store' ),
+                    'show_option_none'  => __( '&mdash; Select &mdash;', 'professional' ),
                     'option_none_value' => '0',
                     'taxonomy'          => 'product_cat',
                     'selected'          => $this->value(),
