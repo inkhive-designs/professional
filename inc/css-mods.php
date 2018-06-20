@@ -20,11 +20,6 @@ function professional_custom_css_mods() {
         echo "body { font-family: ".esc_html(get_theme_mod('professional_body_font'))."; }";
     endif;
 
-    
-    // Echo the Custom CSS Entered via Theme Options
-    echo esc_html( get_theme_mod('professional_custom_css') );
-
-
     echo "</style>";
     //CSS Ends
 }
